@@ -1,0 +1,19 @@
+Project Details:
+- An E-Commerce App with products stored in the database.
+- Orders stored in the database.
+- A front-end to display products, add to cart functionality, checkout page
+- Stripe Payment Gateway integrated.
+- Authentication using JWT Auth.
+
+Project Requirements:
+- A front-end in React to display products.
+- Products listing page to have search products by name, category, and price range.
+- Product details page to have all details about the product.
+- About us page for the company details.
+- Contact us page for sending messages to the admin, that can be saved in db so that later can be displayed to admin in admin panel.
+- Add to cart functionality.
+- Checkout page, which contains all items, items quantity can be increased/decreased.
+- On checkout, redirection to the payment page (Payment can be done using stripe)
+- Products listing coming from backend (From MongoDB)
+- Users Authentication using JWT Auth.
+- More things can be added later like an Admin Panel from where products can be managed.

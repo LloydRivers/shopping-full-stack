@@ -1,0 +1,16 @@
+1: Need an Array of products at the backend (Start with NodeJS)
+2: Connection of front-end and backend
+3: sending the products to the front end
+4: Build Frontend 
+    4a: Products List page (Home Page)
+        4a1: Search By Name
+        4a2: Dropdown for category
+        4a3: Sort By Name, Price
+    4b: Product details page
+    4c: About Us Page
+    4d: COntact Us Page
+    4e: Cart Page (Inc/dec products)
+    4f: Checkout Page
+    //Auth: (later on)
+5:  Auth (JWT + local storage) 
+6: Admin Panel (List ORders, Manage Products) (Later On
