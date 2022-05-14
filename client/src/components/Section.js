@@ -9,7 +9,7 @@ function Section({ data, title }) {
       <h1>{title}</h1>
       <Row>
         {data.map((product) => (
-          <div key={product.id} className=" col-sm-1 col-md-3">
+          <div key={product.id} className="col-sm-6  col-md-4 col-lg-3">
             <ShoppingCard className="line-clamp" product={product} />
           </div>
         ))}

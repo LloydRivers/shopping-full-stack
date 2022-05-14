@@ -1,14 +1,8 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ShoppingCard({ product }) {
-  const navigate = useNavigate();
-
-  const navigateToDetailsPage = async () => {
-    navigate("");
-  };
-
   return (
     <Card style={{ width: "250px" }}>
       <Card.Img
@@ -24,9 +18,9 @@ function ShoppingCard({ product }) {
       <Card.Body>
         <Card.Title className="line-clamp">{product.title}</Card.Title>
         <Card.Text className="line-clamp">{product.description}</Card.Text>
-        <Button onClick={navigateToDetailsPage} variant="primary">
-          Go somewhere
-        </Button>
+        <Link to={`details/${product.id}`}>
+          <Button variant="primary">Go somewhere</Button>
+        </Link>
       </Card.Body>
     </Card>
   );

@@ -17,10 +17,11 @@ mongoose.connect(
   }
 );
 
-// Importing Controllers
+// Import Controllers
 const productController = require("./controllers/ProductController");
 
 app.get("/", productController.allProducts);
+app.get("/products/:id", productController.getSpecificProduct);
 // app.get("/blahblah", productController.create);
 
 app.listen(4000);

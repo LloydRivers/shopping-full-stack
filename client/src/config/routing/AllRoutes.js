@@ -10,7 +10,7 @@ export default function AllRoutes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/details" element={<DetailsPage />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
       </Router>
     </>
