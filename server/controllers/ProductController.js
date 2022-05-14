@@ -1,7 +1,9 @@
 const products = require("./../products.json");
 
 module.exports = {
-  allProducts: (req, res) => {
+  allProducts: async (req, res) => {
+    //MongoDB Commands
+    // Fetch All Products
     res.send(products);
   },
   create: async (req, res) => {

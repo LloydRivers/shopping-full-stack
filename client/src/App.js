@@ -2,12 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Container } from "react-bootstrap";
-import HomePage from "./pages/HomePage";
+import AllRoutes from "./config/routing/AllRoutes";
 
 function App() {
   return (
     <Container>
-      <HomePage />
+      <AllRoutes />
     </Container>
   );
 }
