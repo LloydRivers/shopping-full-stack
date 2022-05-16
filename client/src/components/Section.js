@@ -4,12 +4,15 @@ import { Container, Row } from "react-bootstrap";
 
 function Section({ data, title }) {
   return (
-    <Container style={{ marginBottom: "2em" }}>
-      {/* {data.length > 0 ? <h1>{data.category}</h1> : null} */}
+    <Container>
       <h1>{title}</h1>
       <Row>
         {data.map((product) => (
-          <div key={product.id} className="col-sm-6  col-md-4 col-lg-3">
+          <div
+            style={{}}
+            key={product._id}
+            className="col-sm-6  col-md-6 col-lg-3 mb-3"
+          >
             <ShoppingCard className="line-clamp" product={product} />
           </div>
         ))}
