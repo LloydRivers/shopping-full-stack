@@ -12,7 +12,7 @@ import {
 
 function ShoppingCard({ product }) {
   return (
-    <Link to={`details/${product.id}`}>
+    <Link to={`details/${product._id}`}>
       <CardContainer>
         <ImageContainer>
           <CardImage src={product.image} />
