@@ -12,17 +12,9 @@ module.exports = {
     res.send(products);
   },
   getSpecificProduct: async (req, res) => {
-    const id = Number(req.params.id);
+    const id = req.params.id;
 
-    var reqProduct;
-    products.forEach((product) => {
-      console.log(product.id);
-      if (product.id === id) {
-        console.log("ID Matched");
-        reqProduct = product;
-      }
-    });
-
+    const reqProduct = await Product.findOne({ _id: id });
     res.send(reqProduct);
   },
   create: async (req, res) => {
