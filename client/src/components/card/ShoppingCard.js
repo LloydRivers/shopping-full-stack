@@ -8,6 +8,7 @@ import {
   CardTitle,
   ImageContainer,
   Span,
+  CartButton,
 } from "./Card.styled";
 
 function ShoppingCard({ product }) {
@@ -17,28 +18,33 @@ function ShoppingCard({ product }) {
     setCartItem(id);
   };
   return (
-    <Link to={`details/${product._id}`}>
-      <CardContainer>
-        <ImageContainer>
-          <CardImage src={product.image} />
-        </ImageContainer>
+    <>
+      <Link to={`details/${product._id}`}>
+        <CardContainer>
+          <ImageContainer>
+            <CardImage src={product.image} />
+          </ImageContainer>
 
-        <CardBody>
-          <Span backgroundColor="#f9eeea" padding="2px 4px">
-            NEW VIP OFFER
-          </Span>
-          <Span isBlock={true}>{product.price}</Span>
-          <CardTitle className="line-clamp">{product.title}</CardTitle>
-        </CardBody>
-        <button onClick={() => addToCart(product.id)}>+</button>
-        <div class="review-rating">
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-      </CardContainer>
-    </Link>
+          <CardBody>
+            <Span backgroundColor="#f9eeea" padding="2px 4px">
+              NEW VIP OFFER
+            </Span>
+            <Span isBlock={true}>${product.price}</Span>
+            <CardTitle className="line-clamp">{product.title}</CardTitle>
+
+            <CartButton onClick={() => addToCart(product.id)}>
+              add to cart
+            </CartButton>
+            <div class="review-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </CardBody>
+        </CardContainer>
+      </Link>
+    </>
   );
 }
 

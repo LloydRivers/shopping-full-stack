@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
+  text-align: left;
 `;
 export const ImageContainer = styled.div`
   position: relative;
@@ -21,7 +22,9 @@ export const CardImage = styled.img`
   width: 70%;
   height: 100%;
 `;
-export const CardBody = styled.div``;
+export const CardBody = styled.div`
+  padding: 1em;
+`;
 export const CardTitle = styled.h2`
   font-size: 14px;
   display: -webkit-box;
@@ -36,4 +39,13 @@ export const Span = styled.span`
   color: #d93f0b;
   padding: ${({ padding }) => (padding ? padding : null)};
   display: ${({ isBlock }) => (isBlock ? "block" : null)};
+  margin: 10px 0;
+`;
+export const CartButton = styled.button`
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  padding: 3px 6px;
+  color: #d93f0b;
+  background-color: transparent;
+  margin-bottom: 5px;
 `;
