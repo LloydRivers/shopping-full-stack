@@ -5,6 +5,9 @@
   --main-grey: #333;
   --main-greyBG: #efefef;
 }
+.fa-star{
+  color: var(--main-orange);
+}
 
 body{
   font-family: 'Poppins', sans-serif;

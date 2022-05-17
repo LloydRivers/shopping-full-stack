@@ -17,5 +17,7 @@ export const Grid = styled.div`
     grid-template-columns: repeat(1, 96%);
   }
 `;
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin: 1.5em 0;
+`;
 export const Title = styled.h4``;

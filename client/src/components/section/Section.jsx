@@ -3,7 +3,6 @@ import ShoppingCard from "../card/ShoppingCard";
 import { Grid, Container, Title } from "./Section.styled";
 
 function Section({ data, title }) {
-  console.log(data);
   return (
     <Container>
       <Title>{title}</Title>

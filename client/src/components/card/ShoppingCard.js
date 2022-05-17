@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import {
@@ -11,6 +11,11 @@ import {
 } from "./Card.styled";
 
 function ShoppingCard({ product }) {
+  const [cartItem, setCartItem] = useState([]);
+
+  const addToCart = (id) => {
+    setCartItem(id);
+  };
   return (
     <Link to={`details/${product._id}`}>
       <CardContainer>
@@ -25,6 +30,13 @@ function ShoppingCard({ product }) {
           <Span isBlock={true}>{product.price}</Span>
           <CardTitle className="line-clamp">{product.title}</CardTitle>
         </CardBody>
+        <button onClick={() => addToCart(product.id)}>+</button>
+        <div class="review-rating">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
       </CardContainer>
     </Link>
   );

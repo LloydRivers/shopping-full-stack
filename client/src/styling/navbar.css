@@ -1,0 +1,61 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+    
+    
+  }
+  
+  nav .navbar-header a{
+    font-family:'Raleway',sans-serif;
+    letter-spacing:1px;
+  }
+  nav .navbar-header a,ul li a{
+    color:#fff;
+    
+  }
+  nav .navbar-header button .fa{
+    color:#fff;
+    border:1px solid #fff;
+    border-radius:5px;
+    padding:4px 10px;
+    font-size:1.5em;
+    position:absolute;
+    top:-0.5px;
+    left:-30px;
+  }
+  
+  .glyphicon-search{
+    color:#2874f0;
+  }
+  
+  
+  form{
+    position:relative;
+    top:10px;
+  }
+  
+  .menu{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+  }
+  
+
+ 
+  
+/*  
+  @media (min-width:863px){
+    footer .container-fluid span{
+    font-size:40px;
+    position:absolute;
+    top:10%;
+    
+  }
+  footer .container-fluid h3{
+   font-size:1.9rem; 
+    
+    width:70%;
+    position:relative;
+    left:15%;
+    top:-10px;
+  } 
+  } */
