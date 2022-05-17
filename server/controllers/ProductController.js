@@ -1,14 +1,19 @@
-const products = require("./../products.json");
+const mongoose = require("mongoose");
+
+//Importing Models
+const Product = require("./../models/Product");
 
 module.exports = {
   allProducts: async (req, res) => {
     //MongoDB Commands
+    // Empty curly brackets, when fetching all
+    const products = await Product.find({});
     // Fetch All Products
     res.send(products);
   },
   getSpecificProduct: async (req, res) => {
     const id = Number(req.params.id);
-    // console.log(products);
+
     var reqProduct;
     products.forEach((product) => {
       console.log(product.id);
@@ -18,7 +23,6 @@ module.exports = {
       }
     });
 
-    console.log(reqProduct);
     res.send(reqProduct);
   },
   create: async (req, res) => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Section from "../components/Section";
+import Section from "../components/section/Section";
+import Hero from "./Hero";
 import axios from "axios";
 
 function HomePage() {
@@ -17,6 +18,7 @@ function HomePage() {
   }, []);
   return (
     <>
+      <Hero />
       <Section
         data={data
           .filter((obj) => obj.category === "men's clothing")
