@@ -31,7 +31,7 @@ function Navigation() {
 
             <li className="nav-item">
               <Link to="/cart" style={{ color: "black" }}>
-                <i class="fa-solid fa-cart-arrow-down"></i>
+                <i className="fa-solid fa-cart-arrow-down"></i>
               </Link>
             </li>
           </ul>
