@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar px-4 navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           Amazon
         </a>
