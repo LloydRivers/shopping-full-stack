@@ -4,6 +4,7 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 24%);
   justify-content: space-between;
+  gap: 1em 0;
 
   @media (max-width: 780px) {
     grid-template-columns: repeat(2, 48%);
@@ -19,5 +20,8 @@ export const Grid = styled.div`
 `;
 export const Container = styled.div`
   margin: 1.5em 0;
+  @media (max-width: 376px) {
+    margin: 1.5em;
+  }
 `;
 export const Title = styled.h4``;

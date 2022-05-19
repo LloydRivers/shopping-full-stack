@@ -14,50 +14,33 @@ import {
 
 function ShoppingCard({ product }) {
   const [cartItems, setCartItems] = useContext(CartContext);
-  // I tried to implement useConext to stop prop drilling
-  // Look in CartCard.js on line 23, you will see I have the item.quantity. What I want to happen is, when a user click the add to cart button, it goes to the cart page, but if they click add t cart twice, I want to update the quantity instead of having 2 rows in there with the same product.
-
-  // what I need to do
-  // {id: count}
-  //Need to have a quantity property
-  //If a product already exists in cart, then increment its quantity
-
-  // ^^^^^^ what I need to do
-
-  // what I have tried is below
-  // const addToCart = (product) => {
-  //   cartItems.forEach((item) => {
-  //     console.log(item);
-  //     if (item._id === product._id) {
-  //       setCartItems(
-  //         cartItems.map((item2) => {
-  //           if (item2._id === product.id) {
-  //             return { ...item2, quantity: product.quantity + 1 };
-  //           } else return item2;
-  //         })
-  //       );
-  // item.quantity = item.quantity + 1;
-  // setCartItems([
-  //   ...cartItems,
-  //   { ...product, quantity: product.quantity + 1 },
-  // ]);
-  //   } else {
-  //     setCartItems([...cartItems, product]);
-  //   }
-  // });
-  // let newProduct = { ...product, quantity: 1 };
-  // setCartItems(
-  //   cartItems.map((item) => {
-  //     if (item.id === product.id) {
-  //       item.quantity++;
-  // return item
-  //     }
-  // else {
-  //
-  // }
-  //   })
-  // );
-  //iF AN ITEM exists, increment item.quantity, otherwise add a new item
+  // receive product from the onClick handler
+  const addToCart = (product) => {
+    // set a flag to find if the item exists
+    let found = 0;
+    // loop over the array
+    cartItems.forEach((item, index) => {
+      // check if the item exists
+      if (item._id === product._id) {
+        //it it does exist change the flag
+        found = 1;
+        // use the setter to increase the quantity
+        setCartItems(
+          cartItems.map((item) => {
+            if (item._id === product._id) {
+              return { ...item, quantity: item.quantity + 1 };
+            } else {
+              return { ...item };
+            }
+          })
+        );
+      }
+    });
+    // if it is not in the array, push it in.
+    if (found === 0) {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
 
   return (
     <>
@@ -73,9 +56,8 @@ function ShoppingCard({ product }) {
           </Span>
           <Span isBlock={true}>${product.price}</Span>
           <CardTitle className="line-clamp">{product.title}</CardTitle>
-          {/* When I click this button it needs to go to the cart page the function is at the top */}
-          <CartButton onClick={() => setCartItems(product)}>
-            {/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */}
+
+          <CartButton onClick={() => addToCart(product)}>
             add to cart
           </CartButton>
           <div className="review-rating">
