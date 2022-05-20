@@ -12,6 +12,12 @@
 body{
   font-family: 'Poppins', sans-serif;
 }
+.border-radius{
+  border-radius: 10px;
+}
+.box-shadow{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
 
 
 
