@@ -1,3 +1,3 @@
-import { Button, ProductTile } from "./DetailsPage.styled";
+import { Button, ProductTitle } from "./DetailsPage.styled";
 
-export { Button, ProductTile };
+export { Button, ProductTitle };
