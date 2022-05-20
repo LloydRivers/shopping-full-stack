@@ -14,14 +14,20 @@ export const Grid = styled.div`
     text-decoration: none;
     color: #000;
   }
-  @media (max-width: 376px) {
-    grid-template-columns: repeat(1, 96%);
+  @media (max-width: 578px) {
+    grid-template-columns: repeat(2, 43%);
+  }
+  @media (max-width: 540px) {
+    grid-template-columns: 1fr;
   }
 `;
 export const Container = styled.div`
-  margin: 1.5em 0;
+  margin: 2.5em 0;
   @media (max-width: 376px) {
     margin: 1.5em;
+    h4 {
+      text-align: center;
+    }
   }
 `;
 export const Title = styled.h4``;

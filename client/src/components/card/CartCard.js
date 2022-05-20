@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../App";
+import { roundNumber } from "../../utility";
 
 function CartCard({ item }) {
   const [cartItems, setCartItems] = useContext(CartContext);
@@ -40,9 +41,7 @@ function CartCard({ item }) {
           />
         </div>
         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-          <h6 className="mb-0">
-            ${Math.round(item.price * Number(item.quantity))}
-          </h6>
+          <h6 className="mb-0">${roundNumber(item.price, item.quantity)}</h6>
         </div>
         <div className="col-md-1 col-lg-1 col-xl-1 text-end">
           <a href="#!" className="text-muted">

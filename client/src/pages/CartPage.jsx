@@ -1,12 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../App";
 import "../styling/cart-page.css";
 import CartCard from "../components/card/CartCard";
+import { totalPrice } from "../utility";
+import { roundGrandTotal } from "../utility";
 
 function CartPage() {
   const [cartItems] = useContext(CartContext);
+  const [grandTotal, setgrandTotal] = useState(0);
 
+  useEffect(() => {
+    console.log("useEffect running");
+    setgrandTotal(totalPrice(cartItems));
+  }, [cartItems]);
   return (
     <>
       <section className="h-custom">
@@ -31,7 +38,9 @@ function CartPage() {
                         </div>
                         <hr className="my-4" />
                         {cartItems.length ? (
-                          cartItems.map((item) => <CartCard item={item} />)
+                          cartItems.map((item) => (
+                            <CartCard key={item._id} item={item} />
+                          ))
                         ) : (
                           <h5>Cart empty</h5>
                         )}
@@ -52,8 +61,10 @@ function CartPage() {
                         <hr className="my-4" />
 
                         <div className="d-flex justify-content-between mb-4">
-                          <h5 className="text-uppercase">items 3</h5>
-                          <h5>€ 132.00</h5>
+                          <h5 className="text-uppercase">
+                            items: {cartItems.length}
+                          </h5>
+                          <h5>${roundGrandTotal(grandTotal)}</h5>
                         </div>
 
                         <h5 className="text-uppercase mb-3">Shipping</h5>
@@ -89,7 +100,7 @@ function CartPage() {
 
                         <div className="d-flex justify-content-between mb-5">
                           <h5 className="text-uppercase">Total price</h5>
-                          <h5>€ 137.00</h5>
+                          <h5>${roundGrandTotal(grandTotal)}</h5>
                         </div>
 
                         <button
