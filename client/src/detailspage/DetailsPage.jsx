@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../productStyling/product-details.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Button, ProductTile } from "./DetailsPage.styled";
+import { Button, ProductTitle } from "./DetailsPage.styled";
 
 function DetailsPage() {
   const [product, setProduct] = useState(null);
@@ -36,9 +36,9 @@ function DetailsPage() {
               <div className="border-radius right-side-pro-detail border p-3 m-0">
                 <div className="row ">
                   <div className="col-12 col-lg-12">
-                    <ProductTile className="m-0 p-0">
+                    <ProductTitle className="m-0 p-0">
                       {product.title}
-                    </ProductTile>
+                    </ProductTitle>
                   </div>
                   <div className="col-12 col-lg-12">
                     <p className="my-2 p-0 price-pro">${product.price}</p>

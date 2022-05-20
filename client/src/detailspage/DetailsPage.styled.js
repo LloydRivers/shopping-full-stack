@@ -11,6 +11,6 @@ export const Button = styled.button`
   text-transform: uppercase;
 `;
 
-export const ProductTile = styled.h1`
+export const ProductTitle = styled.h1`
   font-size: 29px;
 `;
