@@ -16,6 +16,13 @@ function CartCard({ item }) {
       })
     );
   };
+  const removeProduct = (productId) => {
+    setCartItems(
+      cartItems.filter((item) => {
+        return item._id !== productId;
+      })
+    );
+  };
   return (
     <>
       <div className="row mb-4 d-flex justify-content-between align-items-center">
@@ -44,9 +51,10 @@ function CartCard({ item }) {
           <h6 className="mb-0">${roundNumber(item.price, item.quantity)}</h6>
         </div>
         <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-          <a href="#!" className="text-muted">
-            <i className="fas fa-times"></i>
-          </a>
+          <i
+            onClick={() => removeProduct(item._id)}
+            className="fas fa-times"
+          ></i>
         </div>
       </div>
       <hr className="my-4" />
