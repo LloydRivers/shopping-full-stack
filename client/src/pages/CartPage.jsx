@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { CartContext } from "../App";
 import "../styling/cart-page.css";
 import CartCard from "../components/card/CartCard";
@@ -7,13 +7,17 @@ import { totalPrice } from "../utility";
 import { roundGrandTotal } from "../utility";
 
 function CartPage() {
+  const navigate = useNavigate();
   const [cartItems] = useContext(CartContext);
   const [grandTotal, setgrandTotal] = useState(0);
 
   useEffect(() => {
-    console.log("useEffect running");
     setgrandTotal(totalPrice(cartItems));
   }, [cartItems]);
+
+  const proceedToCheckout = () => {
+    navigate("/checkout"); //window.location.href = '/checkout'
+  };
   return (
     <>
       <section className="h-custom">
@@ -67,48 +71,20 @@ function CartPage() {
                           <h5>${roundGrandTotal(grandTotal)}</h5>
                         </div>
 
-                        <h5 className="text-uppercase mb-3">Shipping</h5>
-
-                        <div className="mb-4 pb-2">
-                          <select className="select">
-                            <option value="1">Standard-Delivery- €5.00</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            <option value="4">Four</option>
-                          </select>
-                        </div>
-
-                        <h5 className="text-uppercase mb-3">Give code</h5>
-
-                        <div className="mb-5">
-                          <div className="form-outline">
-                            <input
-                              type="text"
-                              id="form3Examplea2"
-                              className="form-control form-control-lg"
-                            />
-                            <label
-                              className="form-label"
-                              htmlFor="form3Examplea2"
-                            >
-                              Enter your code
-                            </label>
-                          </div>
-                        </div>
-
                         <hr className="my-4" />
 
                         <div className="d-flex justify-content-between mb-5">
                           <h5 className="text-uppercase">Total price</h5>
                           <h5>${roundGrandTotal(grandTotal)}</h5>
                         </div>
-
                         <button
+                          disabled={cartItems.length ? false : true}
                           type="button"
+                          onClick={proceedToCheckout}
                           className="btn btn-dark btn-block btn-lg"
                           data-mdb-ripple-color="dark"
                         >
-                          Register
+                          Proceed
                         </button>
                       </div>
                     </div>
