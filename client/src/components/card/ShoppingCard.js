@@ -14,17 +14,12 @@ import {
 
 function ShoppingCard({ product }) {
   const [cartItems, setCartItems] = useContext(CartContext);
-  // receive product from the onClick handler
+
   const addToCart = (product) => {
-    // set a flag to find if the item exists
     let found = 0;
-    // loop over the array
     cartItems.forEach((item, index) => {
-      // check if the item exists
       if (item._id === product._id) {
-        //it it does exist change the flag
         found = 1;
-        // use the setter to increase the quantity
         setCartItems(
           cartItems.map((item) => {
             if (item._id === product._id) {
@@ -36,7 +31,7 @@ function ShoppingCard({ product }) {
         );
       }
     });
-    // if it is not in the array, push it in.
+
     if (found === 0) {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
