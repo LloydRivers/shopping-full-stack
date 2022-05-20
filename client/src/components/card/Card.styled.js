@@ -5,6 +5,8 @@ export const CardContainer = styled.div`
   transition: 0.3s;
   padding: 1em;
   background-color: #fff;
+  border-radius: 10px;
+
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
@@ -19,7 +21,8 @@ export const CardImage = styled.img`
   object-fit: contain;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 70%;
   height: 100%;
 `;
@@ -44,7 +47,7 @@ export const Span = styled.span`
 `;
 export const CartButton = styled.button`
   border-radius: 10px;
-  border: 2px solid whitesmoke;
+  border: 2px solid rgb(200, 200, 200);
   padding: 3px 6px;
   color: #d93f0b;
   background-color: transparent;
