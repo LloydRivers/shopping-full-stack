@@ -3,8 +3,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { CartContext } from "../App";
 import "../styling/cart-page.css";
 import CartCard from "../components/card/CartCard";
-import { totalPrice } from "../utility";
-import { roundGrandTotal } from "../utility";
+import { totalPrice, roundGrandTotal } from "../utility";
 
 function CartPage() {
   const navigate = useNavigate();

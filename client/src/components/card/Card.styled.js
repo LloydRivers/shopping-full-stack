@@ -29,12 +29,13 @@ export const CardImage = styled.img`
 export const CardBody = styled.div`
   padding: 1em;
 `;
-export const CardTitle = styled.h2`
+export const CardTitle = styled.h3`
   font-size: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-weight: bold;
 `;
 
 export const Span = styled.span`
@@ -46,10 +47,19 @@ export const Span = styled.span`
   margin: 10px 0;
 `;
 export const CartButton = styled.button`
-  border-radius: 10px;
-  border: 2px solid rgb(200, 200, 200);
-  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid rgb(200, 200, 200);
+  padding: 5px 18px;
   color: #d93f0b;
   background-color: transparent;
   margin-bottom: 5px;
+  transition: 0.8;
+
+  &:hover {
+    opacity: 0.9;
+    background-color: #d93f0b;
+    color: #fff;
+    transition: 0.5s;
+    border: 1px solid #d93f0b;
+  }
 `;
